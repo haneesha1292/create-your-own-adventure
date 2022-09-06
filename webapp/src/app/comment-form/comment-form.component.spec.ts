@@ -1,12 +1,15 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { CommentService } from '../comment.service';
 
 import { CommentFormComponent } from './comment-form.component';
 
 describe('CommentFormComponent', () => {
   let component: CommentFormComponent;
+  let testBedService: CommentService;
   let fixture: ComponentFixture<CommentFormComponent>;
   let de: DebugElement;
   let el: HTMLElement;
@@ -14,12 +17,13 @@ describe('CommentFormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ CommentFormComponent ],
-      imports: [ReactiveFormsModule]
+      imports: [ReactiveFormsModule, HttpClientTestingModule]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
+    testBedService = TestBed.inject(CommentService);
     fixture = TestBed.createComponent(CommentFormComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('form'));

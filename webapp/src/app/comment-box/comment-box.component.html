@@ -1,9 +1,11 @@
-<div class="comment-card" *ngFor="let cmnt of comments">
-    <mat-card>
-        <mat-card-title>{{cmnt.name}} says: </mat-card-title>
-        <mat-card-subtitle>{{cmnt.created | date:'fullDate'}}</mat-card-subtitle>
-        <mat-card-content>
-            {{cmnt.message}}
-        </mat-card-content>
-    </mat-card>
-</div>
+<ng-container *ngIf="comments">
+    <div class="comment-card" *ngFor="let cmnt of comments">
+        <mat-card>
+            <mat-card-title>{{cmnt.name}} says: </mat-card-title>
+            <mat-card-subtitle>{{cmnt.created | date:'fullDate'}}</mat-card-subtitle>
+            <mat-card-content>
+                {{cmnt.message}}
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-container>
