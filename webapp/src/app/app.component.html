@@ -1,0 +1,9 @@
+<div class="main-wrapper">
+  <h1 class="app-heading">Create your own adventure</h1>
+  <div class="form-wrapper">
+    <app-comment-form (commentAdded)="onCommentAdded($event)"></app-comment-form>
+  </div>
+  <div class="comment-wrapper">
+    <app-comment-box [comments]="allComments"></app-comment-box>
+  </div>
+</div>
