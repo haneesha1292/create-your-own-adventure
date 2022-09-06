@@ -1,4 +1,4 @@
-# Front-end Choose Your Own Adventure Take-Home
+# Front-end Choose Your Own Adventure
 
 Design and build a comments feed that displays all comments and notifies a user in real-time when new comments are added.
 
