@@ -30,7 +30,7 @@ export class CommentFormComponent implements OnInit {
       this.commentAdded.emit(true);
       this.commentForm.reset();
     }, (error)=>{
-      alert(error);
+      alert(error.message);
     })
   }
 
