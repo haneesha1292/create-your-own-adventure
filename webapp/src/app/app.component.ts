@@ -17,6 +17,8 @@ export class AppComponent implements OnInit{
   getComments() {
     this.commentService.getComments().subscribe((result:Comment[])=>{
       this.allComments = result;
+    }, (error)=> {
+      alert(error);
     })
   }
 
